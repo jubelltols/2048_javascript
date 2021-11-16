@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="app.js"></script>
+    <link rel="shortcut icon" href="assets/img/2048_logo.png" />
+    <title>2048</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container_menu">
+            <div class="title">
+                <h1>2048</h1>
+            </div>
+            <div class="score" id="start">
+                <h4 class="score_title">SCORE</h4>
+                <p class="score_number">0</p>
+            </div>
+            <div class="best_score">
+                <h4 class="best_score_title">BEST</h4>
+                <p class="best_score_number">0</p>
+            </div>
+            <div class="minidescription">
+                <p class="description_content">¡Únete a las fichas, llega al <b>2048! <a href="#description_content" onclick="change_color_description()">Cómo jugar →</a></b></p>
+            </div>
+            <div class="button_newgame">
+                <button class="new_game" onclick="new_game()">New Game</button>
+            </div>
+        </div>
+        <div class="container_board">
+            <div class="board">
+                <div>
+                    <div id="00"></div>
+                </div>
+                <div>
+                    <div id="01"></div>
+                </div>
+                <div>
+                    <div id="02"></div>
+                </div>
+                <div>
+                    <div id="03"></div>
+                </div>
+                <div>
+                    <div id="10"></div>
+                </div>
+                <div>
+                    <div id="11"></div>
+                </div>
+                <div>
+                    <div id="12"></div>
+                </div>
+                <div>
+                    <div id="13"></div>
+                </div>
+                <div>
+                    <div id="20"></div>
+                </div>
+                <div>
+                    <div id="21"></div>
+                </div>
+                <div>
+                    <div id="22"></div>
+                </div>
+                <div>
+                    <div id="23"></div>
+                </div>
+                <div>
+                    <div id="30"></div>
+                </div>
+                <div>
+                    <div id="31"></div>
+                </div>
+                <div>
+                    <div id="32"></div>
+                </div>
+                <div>
+                    <div id="33"></div>
+                </div>
+            </div>
+            <div id="game_over" style="display: none">
+                <p class="game_over_title">Game over!</p>
+                <button class="new_game" onclick="new_game()">Try Again</button>
+            </div>
+            <div id="win" style="display: none">
+                <p class="win_title">You win!</p>
+                <button class="new_game" onclick="new_game()">Try Again</button>
+            </div>
+        </div>
+        <div class="container_description">
+            <p id="description_content">
+                <b>CÓMO JUGAR:</b> Utilice <b>las teclas de flecha</b> para mover las 
+                fichas. Los mosaicos con el mismo número se <b>fusionan en 
+                uno </b> cuando se tocan. <b>¡Súmalos</b> para llegar a <b>2048! <a href="#start">Empieza 
+                a jugar →</a> </b> 
+            </p>
+        </div>
+        <div class="container_author">
+            <hr><p>Creado por <a href="https://github.com/jubelltols"><b>Jubelltols</b></a>. Basado en 2048 de <a href="https://play2048.co/"><b>Gabriele Cirulli</b></a>.</p>
+        </div>
+    </div>
+</body>
+</html>

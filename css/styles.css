@@ -1,0 +1,335 @@
+body {
+  font-family: Arial;
+  background-color: #faf8ef;
+}
+
+p, a {
+  color: #786e64;
+}
+
+h1 {
+  font-size: 55px;
+  color: #786e64;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 450px 150px 1fr;
+  grid-template-areas: "container_menu" "container_board" "container_description" "container_author";
+}
+
+/* ------------------- Container Menu --------------------- */
+.container_menu {
+  grid-area: container_menu;
+  display: grid;
+  grid-template-columns: repeat(3, 155px);
+  grid-template-rows: 1fr, 1fr;
+  grid-template-areas: "title score best_score" "description description button_newgame";
+  justify-self: center;
+  margin-top: 20px;
+}
+
+/* ------------------- Title --------------------- */
+.title {
+  grid-area: title;
+  justify-self: start;
+}
+
+/* ------------------- Score and Best Score --------------------- */
+.score {
+  grid-area: score;
+}
+
+.best_score {
+  grid-area: best_score;
+}
+
+.score, .best_score {
+  display: grid;
+  justify-self: end;
+  background-color: #bbada0;
+  margin-left: 10px;
+  width: 145px;
+  height: 65px;
+  border-radius: 3px;
+  text-align: center;
+  align-items: center;
+}
+
+.score_title, .best_score_title {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  padding: 0;
+  color: #e0d9cd;
+}
+
+.score_number, .best_score_number {
+  margin: 0;
+  padding: 0;
+  color: #faf8ef;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+/* ------------------- Mini description --------------------- */
+.minidescription {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  grid-area: description;
+  justify-self: start;
+}
+
+/* ------------------- Button Start --------------------- */
+.button_newgame {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  grid-area: button_newgame;
+  justify-self: end;
+}
+
+.new_game {
+  background-color: #8f7a66;
+  color: #faf8ef;
+  width: 145px;
+  height: 40px;
+  border-radius: 3px;
+  border: 0px;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+/* ------------------- Container Board --------------------- */
+.container_board {
+  display: grid;
+  grid-area: container_board;
+  justify-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-radius: 2%;
+  border: 6px solid #bbada0;
+  background-color: #bbada0;
+  position: absolute;
+}
+.board > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #bbada0;
+  width: 100px;
+  height: 100px;
+  background-color: #cdc1b5;
+  font-weight: bold;
+  font-size: 40px;
+}
+.board > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------- Title --------------------- */
+.tile_0 {
+  background-color: #cdc1b5;
+  color: #cdc1b5;
+}
+
+.tile_2 {
+  background-color: #eee4da;
+  color: #776e65;
+}
+
+.tile_4 {
+  background-color: #ede0c8;
+  color: #776e65;
+}
+
+.tile_8 {
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+
+.tile_16 {
+  background-color: #f59563;
+  color: #f9f6f2;
+}
+
+.tile_32 {
+  background-color: #f67c60;
+  color: #f9f6f2;
+}
+
+.tile_64 {
+  background-color: #f65e3b;
+  color: #f9f6f2;
+}
+
+.tile_128 {
+  background-color: #edcf73;
+  color: #f9f6f2;
+}
+
+.tile_256 {
+  background-color: #edcc62;
+  color: #f9f6f2;
+}
+
+.tile_512 {
+  background-color: #edc850;
+  color: #f9f6f2;
+}
+
+.tile_1024 {
+  background-color: #eec340;
+  color: #f9f6f2;
+}
+
+.tile_2048 {
+  background-color: #eec22e;
+  color: #f9f6f2;
+}
+
+/* ----------- Animation title ----------- */
+.init {
+  width: 100px;
+  height: 100px;
+  animation: keyframe_init 0.5s;
+}
+
+.sum {
+  width: 100px;
+  height: 100px;
+  animation: keyframe_sum 0.2s;
+}
+
+@keyframes keyframe_init {
+  0% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes keyframe_sum {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ------------------- Game Over --------------------- */
+#game_over {
+  background-color: rgba(253, 250, 250, 0.5);
+  width: 460px;
+  height: 460px;
+  position: absolute;
+  border-radius: 2%;
+  text-align: center;
+}
+#game_over .game_over_title {
+  padding-top: 100px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #786e64;
+}
+
+/* ------------------- Win --------------------- */
+#win {
+  background-color: rgba(255, 208, 0, 0.466);
+  width: 460px;
+  height: 460px;
+  position: absolute;
+  border-radius: 2%;
+  text-align: center;
+}
+#win .win_title {
+  padding-top: 100px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #faf8ef;
+}
+
+/* ------------------- Game Over and Win Animation --------------------- */
+.opacity {
+  animation: Key_opacity 1s;
+}
+
+@keyframes Key_opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* ------------------- Container Description --------------------- */
+.container_description {
+  display: grid;
+  grid-area: container_description;
+  justify-self: center;
+  align-items: center;
+  width: 480px;
+}
+.container_description #description_content {
+  padding: 10px;
+}
+
+/* ----------- Animation change color ----------- */
+.colorchange {
+  padding: 10px;
+  animation: colorchange 5s;
+  border-radius: 5px;
+}
+
+@keyframes colorchange {
+  0% {
+    background-color: #faf8ef;
+  }
+  10% {
+    background-color: #e9d045;
+  }
+  100% {
+    background-color: #faf8ef;
+  }
+}
+/* ------------------- Container Author --------------------- */
+.container_author {
+  grid-area: container_author;
+  justify-self: center;
+  width: 450px;
+}
+
+.translateTile {
+  animation: translateTile 0.5s;
+}
+
+@keyframes translateTile {
+  0% {
+    transform: translateX(10px);
+  }
+  10% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(112px);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
