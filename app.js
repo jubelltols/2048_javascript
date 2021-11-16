@@ -60,7 +60,9 @@ function new_game(){
     document.querySelector("#game_over").style.display = "none";
     document.querySelector("#win").style.display = "none";
     document.querySelector(".best_score_number").innerHTML = best_score;
-    
+    document.querySelector(".score_number").innerHTML = score;
+    document.querySelector(".best_score_number").innerHTML = best_score;
+
     gameState =  [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
